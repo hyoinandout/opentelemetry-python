@@ -191,7 +191,7 @@ class TestLoggingHandler(unittest.TestCase):
         )
         self.assertEqual(
             log_record.attributes[SpanAttributes.EXCEPTION_MESSAGE],
-            "division by zero",
+            """ZeroDivisionError(ZeroDivisionError("division by zero"))""",
         )
         stack_trace = log_record.attributes[
             SpanAttributes.EXCEPTION_STACKTRACE
